@@ -51,12 +51,10 @@ public class Graph {
         return adjacencyList.get(source).contains(destination);
     }
 
-    // Метод для проверки, пустой ли граф (нужно для подсказок)
     public int getVertexCount() {
         return adjacencyList.size();
     }
 
-    // --- ОБНОВЛЕННЫЙ ВИЗУАЛ ---
     @Override
     public String toString() {
         if (adjacencyList.isEmpty()) {
@@ -66,13 +64,11 @@ public class Graph {
         for (Integer vertex : adjacencyList.keySet()) {
             Set<Integer> neighbors = adjacencyList.get(vertex);
 
-            // Рисуем красивую вершину ( V )
             builder.append("   ( ").append(vertex).append(" ) ");
 
             if (neighbors.isEmpty()) {
-                builder.append("   (no connections)"); // Если одинока
+                builder.append("   (no connections)");
             } else {
-                // Рисуем стрелочку <===>
                 builder.append("<====> ").append(neighbors);
             }
             builder.append("\n");
